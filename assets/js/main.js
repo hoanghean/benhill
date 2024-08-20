@@ -14,13 +14,6 @@ function submitForm(num) {
     let noiDung = document.getElementById(`noiDung${num}`).value;
     submitToGoogleForms(ten,sdt,mail,loai,noiDung)
 }
-function contactForm() {
-    let ten = document.getElementById('hoten').value;
-    let sdt = document.getElementById('sdt').value;
-    let mail = ''; let noiDung = '';
-    let loai = document.getElementById('loai').value;
-    submitToGoogleForms(ten,sdt,mail,loai,noiDung)
-}
 async function submitToGoogleForms(ten, sdt, mail, loai, noiDung) {
     const formUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSm0xDzzsX6IT_I7QwZuKektVJg99MSUFmz0Vk2rpd2Fd-oQ/formResponse';
     const formData = new URLSearchParams({
