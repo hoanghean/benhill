@@ -40,3 +40,28 @@ async function submitToGoogleForms(ten, sdt, mail, loai, noiDung) {
         window.location = '/thanks';
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tabbed-content > ul > li');
+    const tabPanels = document.querySelectorAll('.tab-panels > .panel');
+    function activateTab(tabId) {
+        tabButtons.forEach(button => button.classList.remove('active'));
+        tabPanels.forEach(panel => panel.classList.remove('active'));
+
+        // Activate the selected tab and panel
+        const selectedTab = document.querySelector(`#tab-${tabId}`);
+        const selectedPanel = document.querySelector(`#${tabId}`);
+
+        if (selectedTab && selectedPanel) {
+            selectedTab.classList.add('active');
+            selectedPanel.classList.add('active');
+        }
+    }
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tabId = this.querySelector('a').getAttribute('href').substring(1);
+            activateTab(tabId);
+        });
+    });
+});
