@@ -1,0 +1,4 @@
+user-agent: *
+Disallow: /assets/
+Allow: /
+Sitemap: https://benhillthuanan.vn/sitemap.xml
